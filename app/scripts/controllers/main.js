@@ -9,12 +9,6 @@
  */
 angular.module('viaApp')
   .controller('MainCtrl', function ($scope,$http) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
     $http.get('http://private-05627-frontendnewhire.apiary-mock.com/contact_list').then(function(res) {
     	console.log(res);
     	$scope.drivers = res.data;
