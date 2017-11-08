@@ -37,7 +37,7 @@ angular.module('viaApp')
 
     $scope.hideMoreDetails = function ($event) {
     	var el=$($event.target).parent();
-   		el.find('.img-container').css('height','135px');
-    	el.find('.more-details').css('height', '0');
+   		el.parent().find('.img-container').css('height','135px');
+    	el.parent().find('.more-details').css('height', '0');
     }
   });
