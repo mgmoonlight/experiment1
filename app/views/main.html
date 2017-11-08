@@ -3,7 +3,10 @@
 </div>
 
 <div class="container">
-      <div ng-repeat="driver in drivers">
+      <div class="loading" ng-if="loading">
+        <label>Loading drivers list...</label>
+      </div>
+      <div ng-repeat="driver in drivers" ng-if="!loading">
           <div class="col-md-3 col-lg-3 col-sm-4 col-xs-6">
               <div class="driver-container" ng-mouseleave="hideMoreDetails($event)">
               

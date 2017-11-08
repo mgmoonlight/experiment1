@@ -9,11 +9,15 @@
  */
 angular.module('viaApp')
   .controller('MainCtrl', function ($scope,$http) {
+
+  	$scope.loading=true;
+  	$scope.status='Loading drivers list...';
     $http.get('http://private-05627-frontendnewhire.apiary-mock.com/contact_list').then(function(res) {
-    	console.log(res);
+    	$scope.loading=false;
     	$scope.drivers = res.data;
     }, function(error) {
-    	console.log('Could not read data');
+    	$scope.loading=true;
+    	$scope.status='Could not read data';
     });
 
     $scope.getImg = function (driver) {
